@@ -1,4 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import GameOverModal from "./GameOver";
+import burger from "./food/burger.jpg";
+import chicken from "./food/chicken.jpg";
+import fries from "./food/fries.jpg";
+import sandwich from "./food/sandwich.jpg";
 
 const GRID_SIZE = 20;
 const INITIAL_SNAKE = [
@@ -8,24 +13,7 @@ const INITIAL_SNAKE = [
 ];
 const INITIAL_DIRECTION = "right";
 
-const foodImages = [
-  "🍎",
-  "🍊",
-  "🍋",
-  "🍌",
-  "🍉",
-  "🍇",
-  "🍓",
-  "🫐",
-  "🥥",
-  "🥝",
-  "🍍",
-  "🥭",
-  "🍑",
-  "🍒",
-  "🥦",
-  "🥬",
-];
+const foodImages = [burger, chicken, fries, sandwich];
 
 function generateFoodPosition() {
   const x = Math.floor(Math.random() * GRID_SIZE);
@@ -40,6 +28,11 @@ function Snake() {
   const [food, setFood] = useState(generateFoodPosition());
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    gridRef.current.focus();
+  }, []);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -105,11 +98,6 @@ function Snake() {
     }
   }
 
-  // useEffect(() => {
-  //   document.addEventListener("keydown", handleKeyDown);
-  //   return () => document.removeEventListener("keydown", handleKeyDown);
-  // }, []);
-
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -127,6 +115,7 @@ function Snake() {
         }}
         onKeyDown={handleKeyDown}
         tabIndex={0}
+        ref={gridRef}
       >
         {snake.map((part, i) => (
           <div
@@ -156,7 +145,7 @@ function Snake() {
       <div style={{ marginTop: "20px", fontWeight: "bold" }}>
         Score: {score}
       </div>
-      {gameOver ? (
+      {/* {gameOver ? (
         <div style={{ marginTop: "20px", textAlign: "center" }}>
           Game Over
           <button
@@ -173,6 +162,12 @@ function Snake() {
         >
           Start Game
         </button>
+      )} */}
+      {gameOver && (
+        <GameOverModal
+          score={score}
+          onPlayAgain={() => window.location.reload()}
+        />
       )}
     </div>
   );
