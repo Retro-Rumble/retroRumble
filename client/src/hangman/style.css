@@ -1,0 +1,93 @@
+.Hangman {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: sans-serif;
+  }
+  
+  .Hangman h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .Hangman-word {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .Hangman-guesses {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .Hangman-input {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .Hangman-input button {
+    background-color: #3498db;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+  }
+  
+  .Hangman-input button:hover {
+    background-color: #2980b9;
+  }
+  
+  .Hangman-input button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+  }
+  
+  .Hangman-input button:focus {
+    outline: none;
+  }
+  
+  .Hangman button {
+    margin-right: 10px;
+  }
+  
+  .Hangman-guesses span {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .Hangman h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .Hangman button {
+    background-color: #3498db;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 10rem;
+    height: 4rem;
+    cursor: pointer;
+  }
+  
+  .Hangman button:hover {
+    background-color: #2980b9;
+  }
+  
+  

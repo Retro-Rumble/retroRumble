@@ -15,10 +15,10 @@ const NavBar = () => {
         <NavLink className="navlink" to="/tictactoe">
           TicTacToe
         </NavLink>
-        {/* <NavLink className="navlink" to="/register">
-          Register
+        <NavLink className="navlink" to="/hangman">
+          Hangman
         </NavLink>
-        <NavLink className="navlink" to="/login">
+        {/* <NavLink className="navlink" to="/login">
           Login
         </NavLink> */}
       </nav>
