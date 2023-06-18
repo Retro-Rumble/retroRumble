@@ -146,6 +146,7 @@ const words = [
   "pebble",
   "quokka",
   "rain",
+  "bear",
 ];
 
 export default words;
